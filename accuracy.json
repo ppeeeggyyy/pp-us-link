@@ -1,0 +1,115 @@
+{
+ "updated": "2026-10-22",
+ "source": "Claude 專案「準確率累計.csv」（追蹤的 24～26 檔大型股）",
+ "cumulative": {
+  "days": 9,
+  "s1Touched": 159,
+  "s1Held": 76,
+  "s1HeldPct": 47.8,
+  "r1Touched": 116,
+  "r1Above": 39,
+  "r1AbovePct": 33.6
+ },
+ "daily": [
+  {
+   "date": "2026-10-05",
+   "n": 26,
+   "s1Touched": 10,
+   "s1Held": 4,
+   "s1Broken": 6,
+   "r1Touched": 19,
+   "r1Above": 9,
+   "r1Total": 24,
+   "extremesNear1pct": "27/52"
+  },
+  {
+   "date": "2026-10-06",
+   "n": 26,
+   "s1Touched": 18,
+   "s1Held": 11,
+   "s1Broken": 7,
+   "r1Touched": 16,
+   "r1Above": 6,
+   "r1Total": 26,
+   "extremesNear1pct": "33/52"
+  },
+  {
+   "date": "2026-10-07",
+   "n": 26,
+   "s1Touched": 14,
+   "s1Held": 10,
+   "s1Broken": 4,
+   "r1Touched": 20,
+   "r1Above": 4,
+   "r1Total": 26,
+   "extremesNear1pct": "35/52"
+  },
+  {
+   "date": "2026-10-08",
+   "n": 26,
+   "s1Touched": 17,
+   "s1Held": 9,
+   "s1Broken": 8,
+   "r1Touched": 10,
+   "r1Above": 3,
+   "r1Total": 26,
+   "extremesNear1pct": "35/52"
+  },
+  {
+   "date": "2026-10-13",
+   "n": 26,
+   "s1Touched": 26,
+   "s1Held": 11,
+   "s1Broken": 15,
+   "r1Touched": 5,
+   "r1Above": 3,
+   "r1Total": 26,
+   "extremesNear1pct": "30/52"
+  },
+  {
+   "date": "2026-10-14",
+   "n": 26,
+   "s1Touched": 15,
+   "s1Held": 12,
+   "s1Broken": 3,
+   "r1Touched": 18,
+   "r1Above": 7,
+   "r1Total": 25,
+   "extremesNear1pct": "39/52"
+  },
+  {
+   "date": "2026-10-15",
+   "n": 26,
+   "s1Touched": 26,
+   "s1Held": 2,
+   "s1Broken": 24,
+   "r1Touched": 1,
+   "r1Above": 0,
+   "r1Total": 26,
+   "extremesNear1pct": "25/52"
+  },
+  {
+   "date": "2026-10-16",
+   "n": 24,
+   "s1Touched": 12,
+   "s1Held": 8,
+   "s1Broken": 4,
+   "r1Touched": 21,
+   "r1Above": 5,
+   "r1Total": 24,
+   "extremesNear1pct": "30/48"
+  },
+  {
+   "date": "2026-10-19",
+   "n": 24,
+   "s1Touched": 21,
+   "s1Held": 9,
+   "s1Broken": 12,
+   "r1Touched": 6,
+   "r1Above": 2,
+   "r1Total": 24,
+   "extremesNear1pct": "30/48"
+  }
+ ],
+ "note": "近撐守住＝最低價碰到近端支撐帶、收盤沒跌破價格帶；第一壓站上＝最高價碰到第一壓力、收盤站上。樣本只有幾天，只是參考。"
+}
