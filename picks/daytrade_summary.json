@@ -1,0 +1,65 @@
+{
+ "updatedAt": "2026-10-30",
+ "cumulative": {
+  "A": {
+   "n": 137,
+   "winRate": 16.8,
+   "avgRet": -2.081,
+   "maxLoss": -5.623
+  },
+  "B": {
+   "n": 78,
+   "winRate": 25.6,
+   "avgRet": -0.774,
+   "maxLoss": -1.816
+  },
+  "C": {
+   "n": 54,
+   "winRate": 20.4,
+   "avgRet": -2.391,
+   "maxLoss": -10.289
+  },
+  "D": {
+   "n": 150,
+   "winRate": 0.0,
+   "avgRet": 0.0,
+   "maxLoss": 0.0
+  }
+ },
+ "recentDays": [
+  {
+   "target": "2026-10-29",
+   "source": "2026-10-28",
+   "listCount": 150,
+   "missing": [],
+   "rules": {
+    "A": {
+     "n": 137,
+     "winRate": 16.8,
+     "avgRet": -2.081,
+     "maxLoss": -5.623
+    },
+    "B": {
+     "n": 78,
+     "winRate": 25.6,
+     "avgRet": -0.774,
+     "maxLoss": -1.816
+    },
+    "C": {
+     "n": 54,
+     "winRate": 20.4,
+     "avgRet": -2.391,
+     "maxLoss": -10.289
+    },
+    "D": {
+     "n": 150,
+     "winRate": 0.0,
+     "avgRet": 0.0,
+     "maxLoss": 0.0
+    }
+   }
+  }
+ ],
+ "cost": "買賣手續費各0.1425%×0.6＋證交稅0.15%，已扣除",
+ "note": "教育性質統計，不是投資建議。日線看不出盤中先後順序，停損是否真的成交無法確認。"
+}
