@@ -1,26 +1,30 @@
 {
- "updatedAt": "2026-10-30",
+ "updatedAt": "2026-11-06",
  "cumulative": {
   "A": {
-   "n": 137,
-   "winRate": 16.8,
-   "avgRet": -2.081,
-   "maxLoss": -5.623
+   "days": 2,
+   "n": 253,
+   "winRate": 9.5,
+   "avgRet": -3.093,
+   "maxLoss": -9.213
   },
   "B": {
-   "n": 78,
-   "winRate": 25.6,
-   "avgRet": -0.774,
+   "days": 2,
+   "n": 188,
+   "winRate": 13.3,
+   "avgRet": -1.244,
    "maxLoss": -1.816
   },
   "C": {
-   "n": 54,
-   "winRate": 20.4,
-   "avgRet": -2.391,
+   "days": 2,
+   "n": 60,
+   "winRate": 21.7,
+   "avgRet": -2.23,
    "maxLoss": -10.289
   },
   "D": {
-   "n": 150,
+   "days": 2,
+   "n": 300,
    "winRate": 0.0,
    "avgRet": 0.0,
    "maxLoss": 0.0
@@ -31,7 +35,6 @@
    "target": "2026-10-29",
    "source": "2026-10-28",
    "listCount": 150,
-   "missing": [],
    "rules": {
     "A": {
      "n": 137,
@@ -50,6 +53,37 @@
      "winRate": 20.4,
      "avgRet": -2.391,
      "maxLoss": -10.289
+    },
+    "D": {
+     "n": 150,
+     "winRate": 0.0,
+     "avgRet": 0.0,
+     "maxLoss": 0.0
+    }
+   }
+  },
+  {
+   "target": "2026-11-06",
+   "source": "2026-11-05",
+   "listCount": 150,
+   "rules": {
+    "A": {
+     "n": 116,
+     "winRate": 0.9,
+     "avgRet": -4.289,
+     "maxLoss": -9.213
+    },
+    "B": {
+     "n": 110,
+     "winRate": 4.5,
+     "avgRet": -1.577,
+     "maxLoss": -1.816
+    },
+    "C": {
+     "n": 6,
+     "winRate": 33.3,
+     "avgRet": -0.78,
+     "maxLoss": -4.698
     },
     "D": {
      "n": 150,
