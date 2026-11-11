@@ -98,6 +98,13 @@ for cat in (us_link or {}).get("cats", []):
         if re.fullmatch(r"\d{4}", str(t.get("code", ""))):
             cand.add(str(t["code"]))
 
+# 前一份名單的個股也抓，供回測使用
+try:
+    for p in json.load(open("zt_latest.json")).get("picks", []):
+        cand.add(str(p.get("code")))
+except Exception:
+    pass
+
 row_re = re.compile(r"^(\d{2}/\d{2}/\d{2})\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.,]+)")
 stocks = {}
 for code in sorted(cand):
