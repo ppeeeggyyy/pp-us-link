@@ -1,7 +1,7 @@
 name: zt-feed
 on:
   schedule:
-    - cron: "35 22 * * 0-4"   # 台北 06:35 週一到週五
+    - cron: "5 22 * * 0-4"    # 台北 06:05 週一到週五（給 06:40 美股快照排程用）
     - cron: "45 23 * * 0-4"   # 台北 07:45 再抓一次（美股收盤資料較完整）
   workflow_dispatch:
 permissions:
