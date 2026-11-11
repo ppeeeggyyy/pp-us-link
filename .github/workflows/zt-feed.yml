@@ -1,0 +1,24 @@
+name: zt-feed
+on:
+  schedule:
+    - cron: "35 22 * * 0-4"   # 台北 06:35 週一到週五
+    - cron: "45 23 * * 0-4"   # 台北 07:45 再抓一次（美股收盤資料較完整）
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python tools/fetch_feed.py
+      - run: |
+          git config user.name "zt-feed bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add feed/zt_input.json
+          git diff --cached --quiet && exit 0
+          git commit -m "feed: 漲停寶寶區原始資料 $(TZ=Asia/Taipei date +%F_%H:%M)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin main && break; sleep 5; done
