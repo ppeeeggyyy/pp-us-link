@@ -121,7 +121,7 @@ for code in sorted(cand):
     time.sleep(0.3)
 
 out = {"generated": datetime.now(TPE).strftime("%Y-%m-%dT%H:%M"),
-       "usDate": sorted({u.get("date") for u in (us_link or {}).get("us", []) if u.get("date")})[-1:] or None,
+       "usDate": max([u.get("date") for u in (us_link or {}).get("us", []) if u.get("date")] or [None], key=lambda x: x or ""),
        "us_link": us_link, "ctee": ctee, "udn": udn, "stocks": stocks, "errors": errors}
 import os
 os.makedirs("feed", exist_ok=True)
