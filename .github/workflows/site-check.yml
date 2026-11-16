@@ -1,0 +1,28 @@
+name: site-check
+# 手動觸發：檢查 pp-site 的 Netlify 部署狀態（網站上線的是哪一版、GitHub 上有沒有 Netlify 的部署狀態）
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          SITE=https://glistening-gumdrop-6e4dc9.netlify.app
+          mkdir -p diag; O=diag/site-check.txt; : > $O
+          echo "time $(date -u)" >> $O
+          for k in HOLD_OFF autoPickXwz autoPickEt epsFilter "二筒妹名單・"; do echo "index.html has $k: $(curl -s "$SITE/?t=$(date +%s)" | grep -c "$k")" >> $O; done
+          for f in xwz-ov xwz-dt pp-etsr pp-srbt pp-limit xwz-pick; do echo "fn $f: $(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$SITE/.netlify/functions/$f?t=1")" >> $O; done
+          echo "--- headers" >> $O; curl -sI "$SITE/" | grep -i -E "x-nf|etag|date|age|cache" >> $O
+          echo "--- pp-site main commit statuses" >> $O
+          curl -s -H "Authorization: Bearer ${{ github.token }}" https://api.github.com/repos/ppeeeggyyy/pp-site/commits/main/status | head -c 3000 >> $O
+          echo; echo "--- pp-site recent commits status" >> $O
+          for s in $(curl -s https://api.github.com/repos/ppeeeggyyy/pp-site/commits?per_page=8 | python3 -c "import json,sys;[print(c['sha']) for c in json.load(sys.stdin)]"); do
+            echo "$s $(curl -s https://api.github.com/repos/ppeeeggyyy/pp-site/commits/$s/status | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('state'),[(x['context'],x['state'],x.get('description')) for x in d.get('statuses',[])])")" >> $O
+          done
+          echo "--- deployments" >> $O
+          curl -s "https://api.github.com/repos/ppeeeggyyy/pp-site/deployments?per_page=5" | python3 -c "import json,sys;d=json.load(sys.stdin);print([(x.get('environment'),x.get('sha','')[:7],x.get('created_at')) for x in d] if isinstance(d,list) else d)" >> $O
+          cat $O
+          git config user.name "site-check bot"; git config user.email "actions@users.noreply.github.com"
+          git add diag; git commit -qm "diag: site-check $(date -u +%H:%M)" && for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin main && break; sleep 5; done
