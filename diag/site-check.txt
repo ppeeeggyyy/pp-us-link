@@ -1,0 +1,29 @@
+time Mon Nov 16 04:40:24 UTC 2026
+index.html has HOLD_OFF: 0
+index.html has autoPickXwz: 0
+index.html has autoPickEt: 0
+index.html has epsFilter: 0
+index.html has 二筒妹名單・: 1
+fn xwz-ov: 200
+fn xwz-dt: 200
+fn pp-etsr: 200
+fn pp-srbt: 400
+fn pp-limit: 200
+fn xwz-pick: 404
+--- headers
+age: 0
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; fwd=miss; fwd-status=200; stored
+date: Mon, 16 Nov 2026 04:40:40 GMT
+etag: "3481d57bfaddaa0c58f874a723a707ff-ssl"
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+x-nf-request-id: 01M7HAGH71VJEKNXY764W2JKQ2
+--- pp-site main commit statuses
+{
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest/commits/statuses#get-the-combined-status-for-a-specific-reference",
+  "status": "404"
+}
+--- pp-site recent commits status
+--- deployments
+{'message': 'Not Found', 'documentation_url': 'https://docs.github.com/rest/deployments/deployments#list-deployments', 'status': '404'}
