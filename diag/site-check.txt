@@ -1,4 +1,4 @@
-time Mon Nov 16 04:47:45 UTC 2026
+time Mon Nov 16 06:13:40 UTC 2026
 index.html has HOLD_OFF: 0
 index.html has autoPickXwz: 0
 index.html has autoPickEt: 0
@@ -11,13 +11,13 @@ fn pp-srbt: 400
 fn pp-limit: 200
 fn xwz-pick: 404
 --- headers
-age: 0
+age: 18
 cache-control: public,max-age=0,must-revalidate
-cache-status: "Netlify Edge"; fwd=miss; fwd-status=200; stored
-date: Mon, 16 Nov 2026 04:47:58 GMT
+cache-status: "Netlify Edge"; hit; ttl=31535982
+date: Mon, 16 Nov 2026 06:13:59 GMT
 etag: "3481d57bfaddaa0c58f874a723a707ff-ssl"
 strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-nf-request-id: 01M7HAXWAV8FTXNP5MPKCY9KBH
+x-nf-request-id: 01M7HFVCXB7F38RP9EFNRRWS3D
 --- pp-site main commit statuses
 {
   "message": "Not Found",
