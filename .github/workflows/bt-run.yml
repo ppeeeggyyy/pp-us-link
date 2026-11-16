@@ -1,0 +1,36 @@
+name: bt-run
+# 手動觸發：收盤後對網站的回測端點跑一次，把結果存進 bt/（從雲端排程連不到網站，所以借 Actions 呼叫）
+on:
+  workflow_dispatch:
+    inputs:
+      date: { description: "進場日 YYYY-MM-DD", required: true }
+      prev: { description: "名單日（前一交易日）YYYY-MM-DD", required: true }
+permissions:
+  contents: write
+jobs:
+  bt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: run
+        env: { D: "${{ inputs.date }}", P: "${{ inputs.prev }}" }
+        run: |
+          SITE=https://glistening-gumdrop-6e4dc9.netlify.app/.netlify/functions
+          mkdir -p bt
+          for i in $(seq 1 20); do
+            r=$(curl -s --max-time 60 "$SITE/xwz-pick?run=1&date=$P&t=$(date +%s)")
+            echo "$r"
+            echo "$r" | grep -q '計算中' || break
+            sleep 3
+          done
+          curl -s --max-time 60 "$SITE/xwz-pick?date=$P" > "bt/${P}_xwz_list.json"
+          curl -s --max-time 120 "$SITE/pp-srbt?date=$D" > "bt/${D}_et_s1.json"
+          curl -s --max-time 120 "$SITE/pp-srbt?date=$D&lv=s12" > "bt/${D}_et_s12.json"
+          curl -s --max-time 120 "$SITE/pp-srbt?date=$D&src=xwz" > "bt/${D}_xwz_s1.json"
+          curl -s --max-time 120 "$SITE/pp-limit?date=$P" > "bt/${P}_et_list.json"
+          ls -la bt; head -c 400 bt/${D}_et_s1.json; echo
+          git config user.name "bt-run bot"; git config user.email "actions@users.noreply.github.com"
+          git add bt; git diff --cached --quiet && exit 0
+          git commit -m "bt: 回測結果 $D（名單日 $P）"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin main && break; sleep 5; done
