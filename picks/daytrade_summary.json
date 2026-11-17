@@ -1,33 +1,33 @@
 {
- "updatedAt": "2026-11-16",
+ "updatedAt": "2026-11-17",
  "cumulative": {
   "A": {
-   "n": 436,
-   "winRate": 10.8,
-   "avgRet": -3.104,
-   "maxLoss": -9.898,
-   "days": 4
+   "n": 570,
+   "winRate": 12.1,
+   "avgRet": -2.996,
+   "maxLoss": -9.913,
+   "days": 5
   },
   "B": {
-   "n": 321,
-   "winRate": 10.0,
-   "avgRet": -1.345,
+   "n": 399,
+   "winRate": 12.5,
+   "avgRet": -1.268,
    "maxLoss": -1.816,
-   "days": 4
+   "days": 5
   },
   "C": {
-   "n": 196,
-   "winRate": 41.3,
-   "avgRet": -0.609,
+   "n": 223,
+   "winRate": 38.1,
+   "avgRet": -0.781,
    "maxLoss": -11.873,
-   "days": 4
+   "days": 5
   },
   "D": {
-   "n": 600,
+   "n": 749,
    "winRate": 0.0,
    "avgRet": 0.0,
    "maxLoss": 0.0,
-   "days": 4
+   "days": 5
   }
  },
  "recentDays": [
@@ -154,9 +154,38 @@
      "maxLoss": 0.0
     }
    }
+  },
+  {
+   "target": "2026-11-17",
+   "source": "2026-11-16",
+   "listCount": 149,
+   "rules": {
+    "A": {
+     "n": 134,
+     "winRate": 16.4,
+     "avgRet": -2.644,
+     "maxLoss": -9.913
+    },
+    "B": {
+     "n": 78,
+     "winRate": 23.1,
+     "avgRet": -0.953,
+     "maxLoss": -1.816
+    },
+    "C": {
+     "n": 27,
+     "winRate": 14.8,
+     "avgRet": -2.025,
+     "maxLoss": -7.204
+    },
+    "D": {
+     "n": 149,
+     "winRate": 0.0,
+     "avgRet": 0.0,
+     "maxLoss": 0.0
+    }
+   }
   }
  ],
- "cost": "買賣手續費各0.1425%×0.6＋證交稅0.15%，已扣除",
- "note": "教育性質統計，不是投資建議。樣本數仍少，單日結果不能下結論。",
- "dataSource": "/.netlify/functions/pp-status?csv=pred（清單）、/.netlify/functions/stock（日線）"
+ "note": "教育性質統計，不是投資建議。日線看不出盤中先後順序，停損／停利是否真的成交無法確認。"
 }
