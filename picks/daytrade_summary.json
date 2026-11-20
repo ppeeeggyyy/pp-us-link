@@ -1,33 +1,33 @@
 {
- "updatedAt": "2026-11-18",
+ "updatedAt": "2026-11-19",
  "cumulative": {
   "A": {
-   "n": 704,
-   "winRate": 18.5,
-   "avgRet": -2.453,
+   "n": 852,
+   "winRate": 16.0,
+   "avgRet": -2.677,
    "maxLoss": -9.913,
-   "days": 6
+   "days": 7
   },
   "B": {
-   "n": 469,
-   "winRate": 15.1,
-   "avgRet": -1.061,
+   "n": 580,
+   "winRate": 12.6,
+   "avgRet": -1.18,
    "maxLoss": -1.816,
-   "days": 6
+   "days": 7
   },
   "C": {
-   "n": 293,
-   "winRate": 35.2,
-   "avgRet": -0.946,
+   "n": 315,
+   "winRate": 32.7,
+   "avgRet": -1.189,
    "maxLoss": -11.873,
-   "days": 6
+   "days": 7
   },
   "D": {
-   "n": 899,
+   "n": 1049,
    "winRate": 0.0,
    "avgRet": 0.0,
    "maxLoss": 0.0,
-   "days": 6
+   "days": 7
   }
  },
  "recentDays": [
@@ -158,7 +158,7 @@
   {
    "target": "2026-11-17",
    "source": "2026-11-16",
-   "listCount": 149,
+   "listCount": 150,
    "rules": {
     "A": {
      "n": 134,
@@ -216,6 +216,38 @@
      "maxLoss": 0.0
     }
    }
+  },
+  {
+   "target": "2026-11-19",
+   "source": "2026-11-18",
+   "listCount": 150,
+   "rules": {
+    "A": {
+     "n": 148,
+     "winRate": 4.1,
+     "avgRet": -3.742,
+     "maxLoss": -7.777
+    },
+    "B": {
+     "n": 111,
+     "winRate": 1.8,
+     "avgRet": -1.682,
+     "maxLoss": -1.816
+    },
+    "C": {
+     "n": 22,
+     "winRate": 0.0,
+     "avgRet": -4.421,
+     "maxLoss": -10.007
+    },
+    "D": {
+     "n": 150,
+     "winRate": 0.0,
+     "avgRet": 0.0,
+     "maxLoss": 0.0
+    }
+   }
   }
- ]
+ ],
+ "note": "教育性質統計，不是投資建議；日線看不出盤中先後順序，停損是否成交無法確認。"
 }
