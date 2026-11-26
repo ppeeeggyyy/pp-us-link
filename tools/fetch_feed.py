@@ -105,6 +105,18 @@ try:
 except Exception:
     pass
 
+# 5b. 二筒選股（2026-11-26 使用者指定）：前一日漲停股、相對大盤強勢股、超跌權值股且股價淨值比低，加上每檔支撐壓力
+tong = None
+raw = get(f"{SITE}/zt-extra?codes={','.join(sorted(cand))}&nocache={nc()}", tries=2)
+if raw:
+    try:
+        tong = json.loads(raw)
+        for k in ("limitUp", "relStrong", "oversold"):
+            for r in tong.get(k, []):
+                cand.add(str(r["c"]))
+    except Exception as e:
+        errors.append(f"zt-extra json: {e}")
+
 row_re = re.compile(r"^(\d{2}/\d{2}/\d{2})\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.,]+)")
 stocks = {}
 for code in sorted(cand):
@@ -129,8 +141,8 @@ for code in sorted(cand):
 
 out = {"generated": datetime.now(TPE).strftime("%Y-%m-%dT%H:%M"),
        "usDate": max([u.get("date") for u in (us_link or {}).get("us", []) if u.get("date")] or [None], key=lambda x: x or ""),
-       "us_link": us_link, "ctee": ctee, "udn": udn, "stocks": stocks, "errors": errors}
+       "us_link": us_link, "ctee": ctee, "udn": udn, "stocks": stocks, "tong": tong, "errors": errors}
 import os
 os.makedirs("feed", exist_ok=True)
 json.dump(out, open("feed/zt_input.json", "w"), ensure_ascii=False, indent=1)
-print(f"us-link {'ok' if us_link else 'FAIL'} | ctee {len(ctee)} | udn {len(udn)} | stocks {len(stocks)} | errors {len(errors)}")
+print(f"us-link {'ok' if us_link else 'FAIL'} | tong {'ok' if tong else 'FAIL'} | ctee {len(ctee)} | udn {len(udn)} | stocks {len(stocks)} | errors {len(errors)}")
